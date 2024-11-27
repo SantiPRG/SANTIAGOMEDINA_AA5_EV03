@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const Evento = () => {
-    const [eventos, setEventos] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/eventos')
-            .then(response => response.json())
-            .then(data => setEventos(data));
-    }, []);
-
+function Evento({ evento }) {
     return (
-        <div>
-            <h1>Eventos Deportivos</h1>
-            <ul>
-                {eventos.map(evento => (
-                    <li key={evento.id}>{evento.nombre} - {evento.fecha} en {evento.lugar}</li>
-                ))}
-            </ul>
+        <div className="evento">
+            <h2>{evento.nombre}</h2>
+            <p>Fecha: {evento.fecha}</p>
+            <p>Lugar: {evento.lugar}</p>
         </div>
     );
-};
+}
 
 export default Evento;

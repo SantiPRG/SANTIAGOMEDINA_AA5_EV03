@@ -1,13 +1,19 @@
 import React from 'react';
 import './App.css';
-import Evento from './components/Evento';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import EventoList from './components/EventoList';
+import FormularioEvento from './components/FormularioEvento';
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <Evento />
-            </header>
+            <Header />
+            <main>
+                <FormularioEvento />
+                <EventoList />
+            </main>
+            <Footer />
         </div>
     );
 }
